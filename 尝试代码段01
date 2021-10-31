@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+from pandas import Series,DataFrame
+from sklearn import datasets
+
+data_values=pd.read_csv("C:/Users/Iron Heart/Desktop/数据分析作业/Train_Values_cleancat.csv")
+data_labels=pd.read_csv("C:/Users/Iron Heart/Desktop/数据分析作业/Train_labels.csv")
+pd_iris=pd.merge(data_values,data_labels,on='building_id')
+
+#
+#a=dir(data_values)#获得当前模块的属性列表 啥是属性列表 得到的是个list
+#print(data_values.DESCR)  #AttributeError: 'DataFrame' object has no attribute 'DESCR'
+#print(value.columns) #获得行变量
+
+#dataframe是pandas！
+print(pd_iris.head())
+
+
+import seaborn as sns
+sns.set_style('whitegrid')#设置绘图主题为whitegrid
+df = sns.load_dataset('iris')#导入形成DataFrame类型
